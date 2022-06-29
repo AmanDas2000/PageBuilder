@@ -1,0 +1,13 @@
+.grid{
+    border: 1px solid gray;
+    margin: 2vh;
+    min-height: 87vh;
+}
+
+.elementSelector{
+    padding-top: 3vh;
+    display: flex;
+    /* width: 100px; */
+    justify-content: space-around;
+    align-items: center;
+}

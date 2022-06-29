@@ -1,14 +1,21 @@
 .textWrap{
-    width: 100%;
+    width: 99%;
     height: 100%;
+    /* text-align: center; */
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
 }
 
-.text{
-    border: none;
-    text-align: center;
-    font-size: 20px;
-    height: 50px;
+.hoverThis{
+    color:transparent;
+}
+
+.hoverThis:hover{
+    color: black;
+}
+
+.textInput:hover+.hoverThis{
+    color: black;
 }

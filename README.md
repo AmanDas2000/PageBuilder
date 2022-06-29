@@ -6,3 +6,5 @@ currently supports text and button with editable colours of text and buttons bac
 🚀Live Demo: https://sweet-malasada-b931d5.netlify.app/
 
 After the desired structure you can download the resulting canvas as a HTML file.
+
+Libraries used: React grid layout, React modern drawer and react-icons.

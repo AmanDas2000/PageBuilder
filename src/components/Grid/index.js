@@ -22,7 +22,7 @@ const Grid = () => {
     dispatch({
       type: 'addText',
       payload: (
-        <div className="element" key={key} data-grid={{ i: key, x: x, y: y, w: 5, h: 2, minW: 5 }}>
+        <div className="element" key={key} data-grid={{ i: key, x: x, y: y, w: 3, h: 2, minW: 3 }}>
           <Text id={key} />
         </div>
       ),
@@ -35,7 +35,7 @@ const Grid = () => {
     dispatch({
       type: 'addButton',
       payload: (
-        <div key={key} data-grid={{ i: key, x: x, y: y, w: 4, h: 2, minW: 3 }}>
+        <div key={key} data-grid={{ i: key, x: x, y: y, w: 3, h: 2, minW: 3 }}>
           <Button id={key} />
         </div>
       ),
@@ -86,7 +86,7 @@ const Grid = () => {
           cols={24}
           rowHeight={30}
           width={window.innerWidth}
-          // height={window.innerHeight}
+          height={window.innerHeight}
           compactType={null}
           onLayoutChange={(e) => dispatch({ type: 'changeLayout', payload: e })}
           isDroppable={true}

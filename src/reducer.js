@@ -44,7 +44,7 @@ export const reducer = (state, action) => {
 };
 
 export const init = {
-  isOpen: false,
+  isOpen: true,
   id: null,
   layoutElements: [],
   layout: [],

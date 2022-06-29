@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useRef, useContext, useEffect } from 'react';
 import './style.css';
 import { globalContext } from '../../App';
@@ -13,57 +14,60 @@ const Text = (props) => {
     fontSize: '25px',
     display: 'flex',
     justifyContent: 'center',
-    alignItems:'center',
+    alignItems: 'center',
     width: '100%!important',
   };
-  
+
   const [styleInput, setStyleInput] = useState(textInputStyle);
 
   useEffect(() => {
     if (context.id === props.id) {
       setStyleInput({ ...styleInput, color: context.color });
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [context.color, context.id, props.id]);
 
   useEffect(() => {
-    setStyleInput({ ...styleInput, textAlign:'center',height: `${document?.getElementsByClassName('textWrap')[0]?.clientHeight}px` })
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [document?.getElementsByClassName('textWrap')[0]?.clientHeight])
+    setStyleInput({
+      ...styleInput,
+      textAlign: 'center',
+      height: `${document?.getElementsByClassName('textWrap')[0]?.clientHeight}px`,
+    });
+  }, [document?.getElementsByClassName('textWrap')[0]?.clientHeight]);
 
   return (
-    <div ref={ref} className='textWrap'>
-      {!context.preview ?
-      <div>
-        <span
-          className="removeStyle"
-          onClick={() => {
-            dispatch({ type: 'remove', payload: props.id });
-          }}
-        >
-          <AiOutlineClose />
-        </span>
-        <span
-          className="colorStyle"
-          onClick={() => {
-            dispatch({ type: 'toggle', payload: props.id });
-            dispatch({ type: 'resetColor', payload: styleInput.color });
-          }}
-        >
-          <FiEdit />
-        </span>
-      </div>
-      :null}
-      {!context.preview ?
+    <div ref={ref} className="textWrap">
+      {!context.preview ? (
+        <div>
+          <span
+            className="removeStyle"
+            onClick={() => {
+              dispatch({ type: 'remove', payload: props.id });
+            }}
+          >
+            <AiOutlineClose />
+          </span>
+          <span
+            className="colorStyle"
+            onClick={() => {
+              dispatch({ type: 'toggle', payload: props.id });
+              dispatch({ type: 'resetColor', payload: styleInput.color });
+            }}
+          >
+            <FiEdit />
+          </span>
+        </div>
+      ) : null}
+      {!context.preview ? (
         <input
-        // className='textInput'
-        style={styleInput}
-        type="text"
-        placeholder="Enter text"
-        onChange={(e) => setText(e.target.value)}
-        value={text}
-      />:
-      <div style={styleInput}>{text}</div>}
+          style={styleInput}
+          type="text"
+          placeholder="Enter text"
+          onChange={(e) => setText(e.target.value)}
+          value={text}
+        />
+      ) : (
+        <div style={styleInput}>{text}</div>
+      )}
     </div>
   );
 };

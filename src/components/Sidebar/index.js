@@ -29,7 +29,7 @@ const Sidebar = (props) => {
 
   return (
     <>
-      <Drawer size={300} open={isOpen} onClose={toggleDrawer} direction="right" className="bla bla bla">
+      <Drawer size={300} open={isOpen} onClose={toggleDrawer} direction="right">
         <div
           style={sideBarStyle}
               >
@@ -37,9 +37,9 @@ const Sidebar = (props) => {
           <BlockPicker
             width={250}
             color={color}
-            onChange={(e) => {
-              setColor(e.hex);
-              changeColor(e.hex);
+            onChange={(color) => {
+              setColor(color.hex);
+              changeColor(color.hex);
             }}
           />
         </div>

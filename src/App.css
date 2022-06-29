@@ -1,0 +1,18 @@
+.label{
+    display: none;
+    position: absolute;
+    font-size: 12px;
+    padding: 3px;
+    border: 1px solid gray;
+    margin: 5px;
+    color: #444;
+}
+
+.navIcon{
+    cursor: pointer;
+}
+
+.navIcon:hover .label{
+    display: inline-block;
+}
+

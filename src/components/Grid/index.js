@@ -12,8 +12,7 @@ import Export from '../../export';
 
 const Grid = () => {
   const { context, dispatch } = useContext(globalContext);
-  // const [layout, setLayout] = useState([]);
-  // const [elements, setElements] = useState([]);
+
   const [count, setCount] = useState(0);
   const [drag, setDrag] = useState('text');
 
@@ -30,6 +29,8 @@ const Grid = () => {
 
     setCount(count + 1);
   };
+
+  
   const addButton = (x, y) => {
     let key = count;
     dispatch({
@@ -44,7 +45,7 @@ const Grid = () => {
     setCount(count + 1);
   };
 
-  const navStyle = { cursor: 'pointer' };
+  
 
   return (
     <div>
@@ -57,8 +58,11 @@ const Grid = () => {
             setDrag('text');
           }}
         >
-          <div style={navStyle}>
+          <div className='navIcon'>
             <BsTextareaT size={'2em'} />
+            <p className='label'>
+              Drag to add text box
+            </p>
           </div>
         </div>
         <div
@@ -69,12 +73,18 @@ const Grid = () => {
             setDrag('button');
           }}
         >
-          <div style={navStyle}>
+          <div className='navIcon'>
             <BsTextareaResize size={'2em'} />
+            <p className='label'>
+              Drag to add button 
+            </p>
           </div>
         </div>
-        <div style={navStyle} onClick={() => dispatch({ type: 'preview' })}>
+        <div className='navIcon' onClick={() => dispatch({ type: 'preview' })}>
           <FiEdit3 size={'1.6em'} />
+          <p className='label'>
+              Edit/Preview
+            </p>
         </div>
         <Export />
       </div>

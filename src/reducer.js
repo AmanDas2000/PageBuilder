@@ -1,3 +1,15 @@
+
+//initial state
+export const init = {
+  isOpen: true,//sideBar control
+  id: null,
+  layoutElements: [],//controls elements 
+  layout: [],//controls layout
+  color: '#37D67A',//controls color change
+  changeColor: false,
+  preview: false,//edit/preview toggle
+};
+
 export const reducer = (state, action) => {
   switch (action.type) {
     case 'toggle':
@@ -43,12 +55,4 @@ export const reducer = (state, action) => {
   }
 };
 
-export const init = {
-  isOpen: true,
-  id: null,
-  layoutElements: [],
-  layout: [],
-  color: '#37D67A',
-  changeColor: false,
-  preview: false,
-};
+

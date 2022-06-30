@@ -8,3 +8,5 @@ currently supports text and button with editable colours of text and buttons bac
 After the desired structure you can download the resulting canvas as a HTML file.
 
 Libraries used: React grid layout, React modern drawer and react-icons.
+
+🕹️Demo video: https://drive.google.com/file/d/1Wgtd8HmAnl1IVnGJ6Pt-etgbT3wLZtqx/view?usp=sharing

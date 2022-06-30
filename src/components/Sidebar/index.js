@@ -19,21 +19,19 @@ const Sidebar = (props) => {
   const changeColor = (currentColor) => {
     dispatch({ type: 'changeColor', payload: currentColor });
   };
-    
-    const sideBarStyle = {
-        display: 'flex',
-        flexDirection:'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-    };
+
+  const sideBarStyle = {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+  };
 
   return (
     <>
       <Drawer size={300} open={isOpen} onClose={toggleDrawer} direction="right">
-        <div
-          style={sideBarStyle}
-              >
-            <div style={{fontSize:'25px',margin:'10px'}}>Pick color</div>
+        <div style={sideBarStyle}>
+          <div style={{ fontSize: '25px', margin: '10px' }}>Pick color</div>
           <BlockPicker
             width={250}
             color={color}

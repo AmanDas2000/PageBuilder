@@ -20,7 +20,7 @@ const Grid = () => {
     let key = count;
     dispatch({
       type: 'addText',
-      payload: (
+      payload: (//sends html element to the context layout array 
         <div className="element" key={key} data-grid={{ i: key, x: x, y: y, w: 3, h: 2, minW: 3 }}>
           <Text id={key} />
         </div>
@@ -30,7 +30,7 @@ const Grid = () => {
     setCount(count + 1);
   };
 
-  
+
   const addButton = (x, y) => {
     let key = count;
     dispatch({
@@ -101,9 +101,9 @@ const Grid = () => {
           onLayoutChange={(e) => dispatch({ type: 'changeLayout', payload: e })}
           isDroppable={true}
           useCSSTransforms={true}
-          onDrop={(a, b, c) => {
-            if (drag === 'text') addText(b.x, b.y);
-            else if (drag === 'button') addButton(b.x, b.y);
+          onDrop={(layout, layoutItem, event) => {
+            if (drag === 'text') addText(layoutItem.x, layoutItem.y);
+            else if (drag === 'button') addButton(layoutItem.x, layoutItem.y);
           }}
         >
           {context.layoutElements}
